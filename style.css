@@ -1,0 +1,137 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #111;
+  background: #ccc;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background-color: #ccc;
+}
+
+.hero {
+  min-height: 150px;
+  display: grid;
+  place-items: center;
+  padding: 20px 12px;
+  background: #000;
+  text-align: center;
+}
+
+.hero h1 {
+  margin: 0;
+  color: #a5df54;
+  font-size: clamp(27px, 6vw, 43px);
+  line-height: 1.12;
+  font-weight: 700;
+  text-shadow: 0 0 3px #a5df54, 0 0 8px #567c2d;
+}
+
+.demo-stage {
+  position: relative;
+  min-height: calc(100vh - 150px);
+  padding: clamp(75px, 17vh, 155px) 20px 95px;
+  background: #ccc;
+}
+
+.search-box {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  transition: width 0.4s ease-in-out;
+  overflow: hidden;
+  border: 2px solid #333;
+}
+
+.search-box:focus-within {
+  width: min(300px, calc(100vw - 48px));
+}
+
+.search-box input {
+  width: 100%;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: none;
+  padding: 0 15px;
+  font-size: 16px;
+  display: none;
+  color: #222;
+  font-family: inherit;
+}
+
+.search-box input::placeholder {
+  color: #777;
+  opacity: 1;
+}
+
+.search-box:focus-within input {
+  display: block;
+}
+
+.search-box button {
+  flex: 0 0 46px;
+  width: 46px;
+  height: 46px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  padding: 0 12px;
+  color: #111;
+}
+
+.search-box button svg {
+  width: 21px;
+  height: 21px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+}
+
+.search-box button:hover svg {
+  transform: scale(1.08);
+}
+
+.search-box button svg {
+  transition: transform .2s ease;
+}
+
+.search-box:focus-within {
+  box-shadow: 0 2px 5px #0002;
+}
+
+.search-feedback {
+  min-height: 20px;
+  margin: 14px auto 0;
+  text-align: center;
+  font-size: 13px;
+  color: #333;
+}
+
+.video-caption {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 28px;
+  text-align: center;
+  font-size: clamp(17px, 4vw, 24px);
+  color: #080808;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: .01ms !important;
+  }
+}
